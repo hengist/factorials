@@ -1,0 +1,8 @@
+Factorials!
+-----------
+
+15/01/2013 2121
+The C code in this directory needs a replacement for getch(), or a
+header file to define it.
+
+Oh, and Shift-ALt-D does the insert DTG thing.
