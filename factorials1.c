@@ -2,7 +2,7 @@
 	Title	:	B&W chapter 3 programming problem 3
 	Source	:   FACTORLS.C
 	Date	:	27 April 1996
-	Modified:	14 January 2013
+	Modified:	14 January 2013 - Change getch() to getc().
 	Author	:   P.A. Morris
 	Input	:	One non-negative integer, n.
 	Output	:	The value a n!, or a table showing all factorial values from
@@ -28,7 +28,7 @@ int main(){
 				" from 0 to your number");
 		printf("\n\t1996\t\t\tESC  Exit the program\n\n\t?");
 
-		option = toupper(getch());	/*	trap lower-case entry		*/
+		option = toupper(getc());	/*	trap lower-case entry		*/
 		switch( option ){
 			case'\x1b':	exit(0);	/*	ESC to leave the while loop	*/
 			case'S':	singlefactorial();

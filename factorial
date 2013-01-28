@@ -1,0 +1,67 @@
+#!/usr/bin/perl
+
+# factorial finder.
+
+my $number;
+
+while( 1 ){					#	infinite while loop
+	printf("\n  !!Factorials!!\tS .. Simple factorial of a number");
+	printf("\n  (c) P.A. Morris\tT .. Table of factorials from 0 to your number");
+	printf("\n  2013\t\t\tQ  Exit the program\n\n\t\t\t? ");
+		chomp(my $option = <>);		
+	if(($option eq "s") || ($option eq "S")){
+		&singlefactorial();
+	}
+	elsif(($option eq "t") || ($option eq "T")){
+		&multifactorial();
+	}
+	elsif(($option eq "q") || ($option eq "Q")){
+		die("Done,");
+	}
+	else{
+		print "\nEnter S, T, or Q to exit...";
+	}
+}
+
+sub singlefactorial{
+	print "\bEnter an integer between 1 and 13..: ";
+	chomp($number = <>);
+	if(( $number > 0 ) && ( $number < 14 )){
+		printf("\n\n\t%d! is %ld\n\n\t?", $number, &factorial($number));
+	}
+	else{
+		print "\n\n\tNumber out of range...Hit a menu key and try again...";
+	}
+}
+
+
+sub multifactorial{
+	my $fact;
+	print "\bEnter an integer between 1 and 13..: ";
+	chomp($number = <>);
+	my $mindex = $number;
+	$number = 0;
+	if(( $mindex > 0 ) && ( $mindex < 14 )){
+		print "\n\tNumber\tFactorial";
+		while($number <= $mindex){
+			$fact = &factorial();
+			print "\n\t$number\t$fact";
+			$number++;
+		}
+	}
+	else{
+		print "\n\n\tNumber out of range...Hit a menu key to try again";
+	}
+	printf "\n\n\t?";
+}
+
+sub factorial{
+	my $index = 1;
+	my $value = 1;
+	while($index <= $number){
+#		$index++;
+		 $value *= $index;
+		 $index++;
+	 }
+	return $value;
+}
